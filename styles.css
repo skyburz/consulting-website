@@ -1,16 +1,16 @@
 /* Color Scheme & Typography Variables */
 :root {
-    --primary: #1e3a8a;        /* Dark blue - main brand color */
+    --primary: #2588a7;        /* Teal - main brand color */
     --secondary: #572b0b;      /* Elegant brown - secondary */
     --accent: #cd5c5c;         /* Terracotta - highlights/CTAs */
-    --neutral: #fbf5f0;        /* Cream/beige - backgrounds */
+    --neutral: #edeff1;        /* Light gray - backgrounds */
     
     /* Additional color variations */
     --primary-light: #3b82f6;
-    --primary-dark: #1e40af;
+    --primary-dark: #3b82f6;
     --secondary-light: #73381a;
     --accent-light: #e57373;
-    --neutral-dark: #f7f0e8;
+    --neutral-dark: #9ca3af;
     --white: #ffffff;
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
@@ -20,7 +20,8 @@
     --gray-900: #111827;
     
     /* Typography */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-light: 300;
     --font-normal: 400;
     --font-medium: 500;
@@ -74,7 +75,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-weight: var(--font-normal);
     font-size: var(--text-base);
     line-height: 1.6;
@@ -84,7 +85,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family);
+    font-family: var(--font-heading);
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
     color: var(--primary);
@@ -144,7 +145,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 60px;
 }
 
 .nav-brand h1 {
@@ -164,6 +165,7 @@ p {
 .nav-link {
     text-decoration: none;
     color: var(--white) !important;
+    font-family: var(--font-heading);
     font-weight: var(--font-medium);
     transition: opacity 0.3s ease;
 }
@@ -206,6 +208,7 @@ p {
     padding: var(--spacing-sm) var(--spacing-xl);
     text-decoration: none;
     border-radius: var(--radius-md);
+    font-family: var(--font-heading);
     font-weight: var(--font-semibold);
     font-size: var(--text-base);
     transition: all 0.3s ease;
@@ -243,8 +246,17 @@ p {
 /* Hero Section */
 .hero {
     background-color: var(--white);
+    background-image: 
+        /* Scatter plot dots */
+        radial-gradient(circle at 25% 35%, rgba(205, 92, 92, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 75% 65%, rgba(37, 136, 167, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 50% 20%, rgba(87, 43, 11, 0.02) 1px, transparent 1px);
+    background-size: 
+        200px 200px,
+        180px 180px,
+        120px 120px;
     padding: 120px 0 var(--spacing-3xl);
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .hero-container {
@@ -256,7 +268,7 @@ p {
 
 .hero-title {
     font-size: var(--text-6xl);
-    font-weight: var(--font-extrabold);
+    font-weight: var(--font-medium);
     margin-bottom: var(--spacing-lg);
     color: var(--secondary);
     max-width: 1000px;
@@ -265,6 +277,7 @@ p {
 }
 
 .hero-subtitle {
+    font-family: var(--font-body);
     font-size: var(--text-xl);
     color: var(--secondary);
     margin-bottom: var(--spacing-2xl);
@@ -293,6 +306,7 @@ p {
 
 .section-header h2 {
     margin-bottom: var(--spacing-lg);
+    color: var(--secondary);
 }
 
 .section-header p {
@@ -320,15 +334,17 @@ p {
 .pillar-card {
     background-color: var(--white);
     padding: var(--spacing-2xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid var(--accent);
+    border: none;
+    border-left: 4px solid var(--accent);
 }
 
 .pillar-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--primary);
 }
 
 
@@ -418,15 +434,17 @@ p {
 .service-item {
     background-color: var(--white);
     padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid var(--accent);
+    border: none;
+    border-left: 4px solid var(--accent);
 }
 
 .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--primary);
 }
 
 .service-item h4 {
@@ -442,44 +460,69 @@ p {
 }
 
 .process-steps {
-    display: grid;
-    gap: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .process-step {
     display: flex;
     gap: var(--spacing-xl);
     align-items: flex-start;
-    background-color: var(--primary);
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 3px solid var(--secondary);
-    color: var(--white);
+    position: relative;
+    padding: var(--spacing-md) 0;
+}
+
+.process-step:not(:last-child)::after {
+    content: "↓";
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    font-size: var(--text-3xl);
+    color: var(--primary);
+    font-weight: var(--font-bold);
 }
 
 .step-number {
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    background-color: var(--secondary);
+    width: 1.8em;
+    height: 1.8em;
+    background-color: var(--primary);
     color: var(--white);
     border-radius: 50%;
-    border: 3px solid var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--text-xl);
+    font-size: 0.95em;
     font-weight: var(--font-bold);
+    box-shadow: var(--shadow-md);
+}
+
+.step-number.inline {
+    display: inline-flex;
+    margin-right: var(--spacing-sm);
+    vertical-align: middle;
+}
+
+.step-content {
+    flex: 1;
+    text-align: center;
 }
 
 .step-content h4 {
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
+    color: var(--primary);
+    font-size: var(--text-xl);
 }
 
 .step-content p {
-    color: var(--white);
+    font-family: var(--font-body);
+    color: var(--gray-600);
+    line-height: 1.6;
 }
 
 /* Why Us Section */
@@ -491,6 +534,7 @@ p {
 .why-us h2 {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
+    color: var(--secondary);
 }
 
 .reasons-grid {
@@ -503,15 +547,17 @@ p {
 .reason {
     padding: var(--spacing-xl);
     background-color: var(--white);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid var(--accent);
+    border: none;
+    border-left: 4px solid var(--accent);
 }
 
 .reason:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--primary);
 }
 
 .reason h4 {
@@ -522,7 +568,7 @@ p {
 /* CTA Section */
 .cta {
     padding: var(--spacing-3xl) 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    background-color: var(--primary);
     color: var(--white);
     text-align: center;
 }
@@ -689,5 +735,15 @@ p {
     
     .reasons-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .step-content {
+        text-align: center;
     }
 }

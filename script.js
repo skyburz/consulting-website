@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(30, 58, 138, 0.95)'; // var(--primary) with opacity
+            navbar.style.backgroundColor = 'rgba(37, 136, 167, 0.95)'; // var(--primary) with opacity
             navbar.style.backdropFilter = 'blur(10px)';
         } else {
-            navbar.style.backgroundColor = '#1e3a8a'; // var(--primary)
+            navbar.style.backgroundColor = '#2588a7'; // var(--primary)
             navbar.style.backdropFilter = 'none';
         }
     });
